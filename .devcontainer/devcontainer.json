@@ -31,7 +31,7 @@
       "extensions": [
         "oven.bun-vscode",
         "tamasfe.even-better-toml",
-        "docker.docker"
+        "docker.docker",
       ]
     }
   }
