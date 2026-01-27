@@ -9,7 +9,7 @@ updates:
     directory: "/.github/workflows" # Location of package manifests
     schedule:
       interval: "weekly"
-  - package-ecosystem: "uv"
+  - package-ecosystem: "bun"
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
