@@ -3,5 +3,6 @@
 set -euo pipefail
 script_dir="$(dirname "${BASH_SOURCE[0]:-$0}")"
 
-uv sync --locked
-
+# configure git to use bun for lockb diffs
+git config --local diff.lockb.textconv bun
+git config --local diff.lockb.binary true

@@ -1,6 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 {
-  "name": "uv template",
+  "name": "bun template",
 
   "dockerComposeFile": "docker-compose-dev.yml",
   // The service vscode connects to
@@ -9,7 +9,7 @@
   "overrideCommand": true,
 
   // ## Environment ##
-  "workspaceFolder": "/project/uv_template",
+  "workspaceFolder": "/project/bun_template",
   // Variables used in all of the container. Rebuild is required if you want to modify
   "containerEnv": {
     "GIT_EDITOR": "vim",
@@ -29,9 +29,9 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-python.python",
+        "oven.bun-vscode",
         "tamasfe.even-better-toml",
-        "charliermarsh.ruff",
+        "docker.docker"
       ]
     }
   }

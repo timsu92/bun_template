@@ -1,12 +1,7 @@
 services:
   app:
     environment:
-      - PROJECT_PATH=/project/uv_template
-      # prevents python creating .pyc files at runtime
-      # - PYTHONDONTWRITEBYTECODE=1
-      # compile python dependencies into .pyc files
-      # - UV_COMPILE_BYTECODE=1
-      - PYTHONDEVMODE=1
+      - PROJECT_PATH=/project/bun_template
       - TZ=Asia/Taipei
     build:
       context: ..
@@ -14,11 +9,11 @@ services:
       # secrets:
       #   - GIT_AUTH_TOKEN
       args:
-        - PROJECT_PATH=/project/uv_template
+        - PROJECT_PATH=/project/bun_template
         - TZ=Asia/Taipei
     volumes:
-      - ..:/project/uv_template:rw,cached
-      - ${UV_CACHE_DIR:-${XDG_CACHE_HOME:-${HOME}/.cache}/uv}:/root/.cache/uv:rw,z
+      - ..:/project/bun_template:rw,cached
+      - ${BUN_INSTALL_CACHE_DIR:-${HOME}/.bun/install/cache}:/root/.bun/install/cache:rw,z
     # deploy:
     #   resources:
     #     reservations:
