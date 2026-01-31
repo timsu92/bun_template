@@ -21,7 +21,8 @@ USER ${NONROOT_USERNAME}
 WORKDIR ${PROJECT_PATH}
 
 COPY package.json bun.lock ./
-RUN bun install --frozen-lockfile --production
+RUN --mount=type=secret,id=GITHUB_TOKEN,required=true,uid=1000,gid=1000 \
+    bun install --frozen-lockfile --production
 
 # COPY --exclude=.devcontainer/ --chown=${NONROOT_USERNAME}:${NONROOT_USERNAME} <some config>
 # RUN bun run <some setup command>

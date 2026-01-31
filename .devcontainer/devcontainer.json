@@ -16,7 +16,7 @@
   },
   // Variables used for the devcontainer.json supporting service / tool
   "remoteEnv": {
-    "GIT_AUTH_TOKEN": "${localEnv:GIT_AUTH_TOKEN}"
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}"
   },
 
   // ## Custom commands in different stages ##
