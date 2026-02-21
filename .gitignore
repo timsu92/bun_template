@@ -1,5 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/git
-# Edit at https://www.toptal.com/developers/gitignore?templates=git
+# Created by https://www.toptal.com/developers/gitignore/api/git,dotenv
+# Edit at https://www.toptal.com/developers/gitignore?templates=git,dotenv
+
+### dotenv ###
+.env
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -16,10 +19,8 @@
 *_LOCAL_*.txt
 *_REMOTE_*.txt
 
-# End of https://www.toptal.com/developers/gitignore/api/git
+# End of https://www.toptal.com/developers/gitignore/api/git,dotenv
 
 ### JS/TS ###
 node_modules
 coverage*
-
-.env
