@@ -1,7 +1,6 @@
 # syntax=docker/dockerfile:1.17-labs
 
 FROM oven/bun:alpine AS prod
-ARG PROJECT_PATH
 ARG NONROOT_USERNAME=nonroot
 
 ENV \
@@ -18,6 +17,7 @@ RUN apk add --no-cache tzdata \
 RUN addgroup -S ${NONROOT_USERNAME} \
     && adduser -S -G ${NONROOT_USERNAME} -h /home/${NONROOT_USERNAME} ${NONROOT_USERNAME}
 USER ${NONROOT_USERNAME}
+ARG PROJECT_PATH
 WORKDIR ${PROJECT_PATH}
 
 COPY package.json bun.lock ./
@@ -33,7 +33,6 @@ COPY --exclude=.devcontainer/ --chown=${NONROOT_USERNAME}:${NONROOT_USERNAME} . 
 ################################################################################
 
 FROM ubuntu:noble AS dev
-ARG PROJECT_PATH
 ARG NONROOT_USERNAME=nonroot
 
 ENV \
@@ -57,6 +56,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
 
 RUN curl -fsSL https://bun.sh/install | bash
 
+ARG PROJECT_PATH
 WORKDIR ${PROJECT_PATH}
 
 CMD ["/bin/sh", "-c", "echo \"Container started\"; trap \"echo Container stopped; exit 0\" 15; exec \"$@\"; while sleep 1 & wait $!; do :; done"]
