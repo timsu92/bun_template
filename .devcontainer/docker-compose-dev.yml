@@ -1,16 +1,9 @@
 services:
   app:
+    image: ghcr.io/timsu92/bun_template:main
     environment:
       - PROJECT_PATH=/project
       - TZ=Asia/Taipei
-    build:
-      context: ..
-      target: dev
-      # secrets:
-      #   - GITHUB_TOKEN
-      args:
-        - PROJECT_PATH=/project
-        - TZ=Asia/Taipei
     volumes:
       - ..:/project:rw,cached
       - ${BUN_INSTALL_CACHE_DIR:-${HOME}/.bun/install/cache}:/root/.bun/install/cache:rw,z
