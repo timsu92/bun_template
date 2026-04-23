@@ -56,6 +56,16 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
 
 RUN curl -fsSL https://bun.sh/install | bash
 
+# Initialize user environment
+ARG ENV_SETUP_REPO=https://github.com/timsu92/env_setup.git
+ARG ENV_SETUP_REF=main
+RUN --mount=type=tmpfs,dst=/tmp/dotfiles \
+    git -C /tmp/dotfiles init \
+    && git -C /tmp/dotfiles remote add origin ${ENV_SETUP_REPO} \
+    && git -C /tmp/dotfiles fetch --depth=1 origin ${ENV_SETUP_REF} \
+    && git -C /tmp/dotfiles checkout --detach FETCH_HEAD \
+    && /tmp/dotfiles/bin/setup-devcontainer
+
 ARG PROJECT_PATH
 WORKDIR ${PROJECT_PATH}
 
