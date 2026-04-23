@@ -1,7 +1,7 @@
 services:
   app:
     environment:
-      - PROJECT_PATH=/project/bun_template
+      - PROJECT_PATH=/project
       - TZ=Asia/Taipei
     build:
       context: .
@@ -9,7 +9,7 @@ services:
       # secrets:
       #   - GITHUB_TOKEN
       args:
-        - PROJECT_PATH=/project/bun_template
+        - PROJECT_PATH=/project
         - TZ=Asia/Taipei
     init: true
     # deploy:

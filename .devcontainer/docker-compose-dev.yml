@@ -1,7 +1,7 @@
 services:
   app:
     environment:
-      - PROJECT_PATH=/project/bun_template
+      - PROJECT_PATH=/project
       - TZ=Asia/Taipei
     build:
       context: ..
@@ -9,10 +9,10 @@ services:
       # secrets:
       #   - GITHUB_TOKEN
       args:
-        - PROJECT_PATH=/project/bun_template
+        - PROJECT_PATH=/project
         - TZ=Asia/Taipei
     volumes:
-      - ..:/project/bun_template:rw,cached
+      - ..:/project:rw,cached
       - ${BUN_INSTALL_CACHE_DIR:-${HOME}/.bun/install/cache}:/root/.bun/install/cache:rw,z
     # deploy:
     #   resources:

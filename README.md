@@ -17,15 +17,9 @@ This is a **Bun-first** project template that comes with:
 
 ## Things to change before using
 
-Before using this template, you may want to change the project path in these files:
+Before using this template, you may want to change the project name:
 
-- [docker-compose.yml line 4](./docker-compose.yml#L4)
-- [docker-compose.yml line 12](./docker-compose.yml#L12)
-- [.devcontainer/docker-compose-dev.yml line 4](./.devcontainer/docker-compose-dev.yml#L4)
-- [.devcontainer/docker-compose-dev.yml line 12](./.devcontainer/docker-compose-dev.yml#L12)
-- [.devcontainer/docker-compose-dev.yml line 15](./.devcontainer/docker-compose-dev.yml#L15)
 - [.devcontainer/devcontainer.json line 3](./.devcontainer/devcontainer.json#L3)
-- [.devcontainer/devcontainer.json line 12](./.devcontainer/devcontainer.json#L12)
 
 ...and you may want to change the timezone:
 
