@@ -54,7 +54,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 # set timezone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
 
-RUN curl -fsSL https://bun.sh/install | bash
+RUN curl -fsSL https://bun.com/install | bash -s "bun-v1.3.14"
 
 # Initialize user environment
 ARG ENV_SETUP_REPO=https://github.com/timsu92/env_setup.git
